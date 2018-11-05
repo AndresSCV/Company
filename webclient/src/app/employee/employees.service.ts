@@ -7,17 +7,17 @@ const httpOptions = {
 };
 
 @Injectable()
-export class CursosService {
+export class EmployeeService {
 
   constructor(private http : HttpClient) { }
 
 
-  obtenerCursos() {
-    return this.http.get('http://localhost:8080/api/curso');
+  obtenerEmployee() {
+    return this.http.get('http://localhost:8080/api/employee');
   }
 
 
-  obtenerCursoPorId(id) {
-    return this.http.get('http://localhost:8080/api/curso/'+id);
+  obtenerEmployeePorLastName(lastName) {
+    return this.http.get('http://localhost:8080/api/employee/lastName/'+lastName);
   }
 }

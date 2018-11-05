@@ -4,18 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {HttpClientModule} from '@angular/common/http';
-import {CursosService} from "./cursos/cursos.service";
+import {EmployeeService} from "./employee/employees.service";
 
 
 import { AppComponent } from './app.component';
-import { EstudiantesComponent } from './estudiantes/estudiantes.component';
-import { CursosComponent } from './cursos/cursos.component';
+import { EmployeeComponent } from './employee/employees.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EstudiantesComponent,
-    CursosComponent
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +21,7 @@ import { CursosComponent } from './cursos/cursos.component';
     HttpModule,
     HttpClientModule
   ],
-  providers: [CursosService],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
