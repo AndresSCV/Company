@@ -9,14 +9,15 @@ import { EmployeeService } from './employees.service';
 
 export class EmployeeComponent {
 
-  public employeeServicio:any;
+  public employeeServicios:  Employee[] = [];
+  public employeeServicio: any;
   public lastNameBuscar:number;
   public employeeBusqueda:any;
 
   constructor(public employeeService: EmployeeService) { }
 
   ngOnInit(){
-    this.cargarEmployees();
+    //this.cargarEmployees();
     /*this.cursos = new Array();
     let cursoDefault = new Curso('Programacion Web', 40, 1000000); 
     this.cursos.push(cursoDefault);
@@ -26,8 +27,10 @@ export class EmployeeComponent {
 
   
 
-  cargarEmployees(){
-     try {
+  public cargarEmployees():void{
+    this.employeeServicios = [{firstName:'Andres',lastName:'Calle'}];
+    console.log(this.employeeServicios);
+     /*try {
       this.employeeService.obtenerEmployee()
         .subscribe(resp => {
           console.log(resp);
@@ -38,7 +41,7 @@ export class EmployeeComponent {
         })
     } catch (e) {
       console.log(e);
-    }
+    }*/
   }
 
   buscarEmployee(){

@@ -1,1 +1,11 @@
-333333
+<button (click)="cargarEmployees()">Consultar</button>
+<table>
+    <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+    </tr>
+    <tr *ngFor="let employee of employeeServicios">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+    </tr>
+  </table>
