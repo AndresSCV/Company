@@ -12,8 +12,8 @@ export class EmployeeService {
   constructor(private http : HttpClient) { }
 
 
-  obtenerEmployee() {
-    return this.http.get('http://localhost:8080/api/employee');
+  public obtenerEmployee() : any{
+    return this.http.get(`http://localhost:8080/api/employee`);
   }
 
 

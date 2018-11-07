@@ -25,13 +25,13 @@ public class EmployeeRestController {
 	private EmployeeJpaRepository employeeJpa;
 	
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Employee> consultar() {
 		return employeeJpa.findAll();
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080/lastName")
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/lastName/{lastName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Employee> buscarPorLastName(@PathVariable String lastName) {
 		return employeeJpa.getByLastName(lastName);

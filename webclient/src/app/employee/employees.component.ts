@@ -10,44 +10,34 @@ import { EmployeeService } from './employees.service';
 export class EmployeeComponent {
 
   public employeeServicios:  Employee[] = [];
-  public employeeServicio: any;
   public lastNameBuscar:number;
-  public employeeBusqueda:any;
+  public employeeBusqueda: Employee[] = [];
 
   constructor(public employeeService: EmployeeService) { }
 
   ngOnInit(){
-    //this.cargarEmployees();
-    /*this.cursos = new Array();
-    let cursoDefault = new Curso('Programacion Web', 40, 1000000); 
-    this.cursos.push(cursoDefault);
-    this.estudianteMatricula = new Estudiante('','',false);
-    */
   }
 
   
 
   public cargarEmployees():void{
-    this.employeeServicios = [{firstName:'Andres',lastName:'Calle'}];
-    console.log(this.employeeServicios);
-     /*try {
+     try {
       this.employeeService.obtenerEmployee()
-        .subscribe(resp => {
-          console.log(resp);
-          this.employeeServicio = resp
+        .subscribe((resp : Employee[]) => {
+          this.employeeServicios = resp
         },
           error => {
             console.log(error, "error");
         })
     } catch (e) {
       console.log(e);
-    }*/
+    }
   }
 
-  buscarEmployee(){
+  public buscarEmployee() : void{
       try {
-        this.employeeServicio.obtenerEmployeePorLastName(this.lastNameBuscar)
-          .subscribe(resp => {
+        this.employeeService.obtenerEmployeePorLastName(this.lastNameBuscar)
+          .subscribe((resp : Employee[]) => {
             console.log(resp);
             this.employeeBusqueda = resp
           },

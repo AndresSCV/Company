@@ -1,11 +1,72 @@
-<button (click)="cargarEmployees()">Consultar</button>
-<table>
-    <tr>
-        <th>firstName</th>
-        <th>lastName</th>
-    </tr>
-    <tr *ngFor="let employee of employeeServicios">
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-    </tr>
-  </table>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1" />
+    <title>Employee</title>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Buscar todos los empleados</h3>
+    <button (click)="cargarEmployees()">Consultar</button>
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Title</th>
+            <th>Department</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let employee of employeeServicios">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.title}}</td>
+            <td>{{employee.dept}}</td>
+            <td>{{employee.email}}</td>
+        </tr>
+    </table>
+    <hr>
+    <div>
+        <h3>Buscar empleado por apellido</h3>
+        <input type="text" [(ngModel)]="lastNameBuscar" placeholder="Ingrese apellido">
+        <button (click)="buscarEmployee()">Consultar</button>
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Title</th>
+                <th>Department</th>
+                <th>Email</th>
+            </tr>
+            <tr *ngFor="let employee of employeeBusqueda">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.title}}</td>
+                <td>{{employee.dept}}</td>
+                <td>{{employee.email}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
